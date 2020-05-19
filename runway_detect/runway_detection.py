@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 import cv2
 # reading in an image
-image = mpimg.imread('services.jpeg')
+image = mpimg.imread('runway_2.jpeg')
 # printing out some stats and plotting the image
 print('This image is:', type(image), 'with dimensions:', image.shape)
 # plt.imshow(image)
@@ -30,8 +30,3 @@ edges = canny(blur_gray,low_threshold,high_threshold)
 plt.figure(figsize=(10,8))
 plt.imshow(edges, cmap='gray')
 plt.show()
-# gray = grayscale(image)
-# plt.figure(figsize=(10,8))
-# plt.imshow(edges, cmap='gray')
-# plt.show()
-
