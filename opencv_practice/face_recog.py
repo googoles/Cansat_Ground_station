@@ -2,8 +2,8 @@ import numpy as np
 import cv2
 from matplotlib import pyplot as plt
 
-face_cascade = cv2.CascadeClassifier('/Users/apple/opt/anaconda3/lib/python3.7/site-packages/cv2/data/haarcascade_frontalface_default.xml')
-eye_cascade = cv2.CascadeClassifier('/Users/apple/opt/anaconda3/lib/python3.7/site-packages/cv2/data/haarcascade_eye.xml')
+face_cascade = cv2.CascadeClassifier('/Users/king/anaconda3/envs/myenv/Library/etc/haarcascades/haarcascade_frontalface_default.xml')
+eye_cascade = cv2.CascadeClassifier('/Users/king/anaconda3/envs/myenv/Library/etc/haarcascades/haarcascade_eye.xml')
 cap = cv2.VideoCapture(0)
 
 while 1:
