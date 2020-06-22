@@ -38,11 +38,6 @@ cv2.setMouseCallback('frame',mouseCallback) # mouse callback has to be set only 
 
 while(1):
     ret, img = cap.read()
-    # width = cap.get(cv2.CAP_PROP_FRAME_HEIGHT_WIDTH)
-    # height = cap.get(cv2.CAP_PROP_FRAME_HEIGHT)
-    # width = cap.get(3)
-    # height = cap.get(4)
-    # print(width,height)
 
     fps = cap.get(cv2.CAP_PROP_FPS)
     draw_circle_onscreen(img,int(width/2),int(height/2)) # draws circle on screen
