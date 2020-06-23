@@ -34,7 +34,7 @@ while 1:
 
     if count >= 1:
         cv2.putText(img, 'Warning!!!', (x - w, y - h), font, 0.5, (255, 255, 0), 2)
-    print(count)
+
     count = 0
 
     cv2.imshow('img', img)

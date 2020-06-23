@@ -29,9 +29,10 @@ def mouseCallback(event,x,y,flags,param):
         print("EVENT_RBUTTONUP")
 
 def draw_circle_onscreen(frame, x,y):
-
-    cv2.circle(frame, (x, y), 180, (0, 0, 255), 1)
-    cv2.circle(frame, (x, y), 5, (0, 0, 255), -1)
+    cv2.circle(frame, (x, y), 5, (0, 0, 255), -1)  # Red Dot
+    cv2.circle(frame, (x, y), 45, (0, 0, 255), 3) # Red
+    cv2.circle(frame, (x,y), 90,(255,0,0), 3) # Blue Circle
+    cv2.circle(frame, (x, y), 180, (0, 255, 0), 3) # Green Circle
 
 cv2.namedWindow('frame')
 cv2.setMouseCallback('frame',mouseCallback) # mouse callback has to be set only once
