@@ -26,7 +26,7 @@ def mouseCallback(event,x,y,flags,param):
         print("Appuyé Droite")
 
     elif event == cv2.EVENT_RBUTTONUP:
-        print("EVENT_RBUTTONUP")
+        print("EVENT_RBUTTONUP")`
 
 def draw_circle_onscreen(frame, x,y):
     cv2.circle(frame, (x, y), 5, (0, 0, 255), -1)  # Red Dot
