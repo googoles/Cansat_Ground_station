@@ -1,9 +1,8 @@
 import cv2
 import numpy as np
-
 bird1_cascade = cv2.CascadeClassifier('bird1-cascade.xml')
 bird2_cascade = cv2.CascadeClassifier('bird2-cascade.xml')
-cap = cv2.VideoCapture('bird2.mp4')
+cap = cv2.VideoCapture('videoplayback.mp4')
 count = 0
 while 1:
 
