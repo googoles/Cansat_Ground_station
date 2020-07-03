@@ -49,7 +49,7 @@ while True:
 
 def init():
     line.set_data(([],[]))
-    return (line,)
+    return line
 
 def animate(yolo):
     global i, xar, Gx, Gy, Gz, Ax, Ay, Az
