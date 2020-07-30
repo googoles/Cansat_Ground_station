@@ -1,4 +1,4 @@
-from time import sleep  # import
+from time import sleep
 import datetime as dt
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
@@ -15,8 +15,8 @@ device = XBeeDevice(port,9600)
 device.open()
 
 #Instantiate a remote Xbee device object
-# remote_device = RemoteXBeeDevice(device, XBee64BitAddress.from_hex_string("0013A20040CA0444"))
-device.set_sync_ops_timeout(10)
+remote_device = RemoteXBeeDevice(device, XBee64BitAddress.from_hex_string("0013A20040CA0444"))
+device.set_sync_ops_timeout(100)
 
 # Read data
 # print(device.get_sync_ops_timeout())

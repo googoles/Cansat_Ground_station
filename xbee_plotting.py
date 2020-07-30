@@ -1,11 +1,11 @@
 from digi.xbee.devices import *
 import re
 from time import sleep  # import
-import datetime as dt
-import matplotlib.pyplot as plt
-
-import numpy as np
-import matplotlib.animation as animation
+# import datetime as dt
+# import matplotlib.pyplot as plt
+#
+# import numpy as np
+# import matplotlib.animation as animation
 
 port = 'COM6' # Serial Port
 baud = 9600 # Serial Baudrate
@@ -14,7 +14,8 @@ baud = 9600 # Serial Baudrate
 device = XBeeDevice(port,baud)
 device.open()
 
-device.set_sync_ops_timeout(10)
+device.set_sync_ops_timeout(100)
+# remote_device = RemoteXBeeDevice(device, XBee64BitAddress.from_hex_string("0013A20040CA0444"))
 
 #Figure
 # fig = plt.figure()
@@ -36,22 +37,24 @@ while True:
         Ax_1 = float(turn_to_list[3])
         Ay_1 = float(turn_to_list[4])
         Az_1 = float(turn_to_list[5])
-        print(Ax,Ay,Az,Gx,Gy,Gz)
+        print(Gx_1,Gy_1,Gz_1,Ax_1,Ay_1,Az_1)
 
+# device.close()
 
-def animate(yolo):
-    global i, xar, Gx,Gy,Gz,Ax,Ay,Az
-    Gx.append(Gx_1)
-    Gy.append(Gy_1)
-    Gz.append(Gz_1)
-    Ax.append(Ax_1)
-    Ay.append(Ay_1)
-    Az.append(Az_1)
-    i = i+1
+# def animate(yolo):
+#     global i, xar, Gx,Gy,Gz,Ax,Ay,Az
+#     Gx.append(Gx_1)
+#     Gy.append(Gy_1)
+#     Gz.append(Gz_1)
+#     Ax.append(Ax_1)
+#     Ay.append(Ay_1)
+#     Az.append(Az_1)
+#     i = i+1
 
 
 # ani = animation.FuncAnimation(fig, animate, init_func=init, frames=200, interval=20, blit=False)
-anim = animation.FuncAnimation(fig,animate,interval = 1000)
+# anim = animation.FuncAnimation(fig,animate,interval = 1000)
 # print(" Reading Data of Gyroscope and Accelerometer")
-plt.show()
-device.close()
+# plt.show()
+
+

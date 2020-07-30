@@ -5,6 +5,16 @@ import datetime as dt
 import matplotlib.pyplot as plt
 import numpy as np
 import matplotlib.animation as animation
+from matplotlib import pyplot as plt
+from matplotlib import animation
+import numpy as np
+import random
+import time
+#
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
+from matplotlib.figure import Figure
+import tkinter as Tk
+
 
 port = 'COM6'  # Serial Port
 baud = 9600  # Serial Baudrate
@@ -13,7 +23,7 @@ baud = 9600  # Serial Baudrate
 device = XBeeDevice(port, baud)
 device.open()
 
-device.set_sync_ops_timeout(10)
+device.set_sync_ops_timeout(1000)
 
 # Figure
 fig = plt.figure()
@@ -35,6 +45,8 @@ while True:
         Ax_1 = float(turn_to_list[3])
         Ay_1 = float(turn_to_list[4])
         Az_1 = float(turn_to_list[5])
+        long = float(turn_to_list[6])
+        lat = float(turn_to_list[7])
         xar.append(int(i))
         print(xar, Ax, Ay, Az, Gx, Gy, Gz)
 
@@ -46,39 +58,3 @@ while True:
         Ax.append(Ax_1)
         Ay.append(Ay_1)
         Az.append(Az_1)
-
-# def init():
-#     line.set_data(([],[]))
-#     return line
-#
-# def animate(yolo):
-#     global i, xar, Gx, Gy, Gz, Ax, Ay, Az
-#
-#     plt.subplot(3, 2, 1)
-#     plt.plot(xar, Gx, 'yo-')
-#     plt.xlabel('Gyro X')
-#     plt.ylabel('Degree/s')
-#
-#     plt.subplot(3, 2, 2)
-#     plt.plot(xar, Gy, 'ro-')
-#     plt.xlabel('Gyro Y')
-#     plt.ylabel('Degree/s')
-#
-#     plt.subplot(3, 2, 3)
-#     plt.plot(xar, Gz, 'go-')
-#     plt.xlabel('Gyro Z')
-#     plt.ylabel('Degree/s')
-#
-#     plt.subplot(3, 2, 4)
-#     plt.plot(xar, Ax, 'bo-')
-#     plt.plot(xar, Ay, 'go-')
-#     plt.plot(xar, Az, 'yo-')
-#     plt.xlabel('Time')
-#     plt.ylabel('Acceleration(m/s^2)')
-#
-#
-# # ani = animation.FuncAnimation(fig, animate, init_func=init, frames=200, interval=20, blit=False)
-# anim = animation.FuncAnimation(fig, animate, interval=5)
-# # print(" Reading Data of Gyroscope and Accelerometer")
-# plt.show()
-device.close()
