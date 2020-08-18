@@ -11,6 +11,7 @@ port = 'COM6' # Serial Port
 baud = 9600 # Serial Baudrate
 
 #Instantiate an Xbee Device object
+# device = XBeeDevice(port,9600)
 device = XBeeDevice(port,9600)
 device.open()
 
@@ -25,9 +26,15 @@ device.set_sync_ops_timeout(100)
 # while xbee_message is None:
 
 while True:
+
+    # xbee_message = device.read_data_from(remote_device,timeout=None)
     xbee_message = device.read_data()
     if xbee_message is not None:
-        print(xbee_message.data.decode())
+        data = xbee_message.data.decode()
+        print(data.split(','))
+        # print(type(data))
+
+
         # a = map(xbee_message,range(5))
         # print(list(a))
         # print(type(xbee_message))
