@@ -7,7 +7,7 @@
 2. Xbee
 3. Tkinter
 
-[images\Cansat_ground_staiton.png]
+![Cansat_ground_staiton](https://user-images.githubusercontent.com/46067507/90512129-9340d680-e198-11ea-9a55-78ebb5f134cb.png)
 
 
 
